@@ -1,0 +1,18 @@
+.card_Newbooks{
+    display: flex;
+}
+
+.card{
+    min-height:650px;
+}
+.signa{
+
+}
+
+
+
+@media screen and (max-width: 990px) {
+    .card{
+        min-height: auto;
+    }
+  }
