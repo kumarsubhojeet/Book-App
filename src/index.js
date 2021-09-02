@@ -4,6 +4,7 @@ import App from './App';
 
 import './Css/Home.css'
 import './bootstrap.min.css'
+import 'antd/dist/antd.css';
 
 import './Css/NewBooks.css'
 import './Css/Search.css'

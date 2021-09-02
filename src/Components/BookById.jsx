@@ -1,10 +1,13 @@
-import React ,{useState} from 'react'
+import React ,{useState , useRef} from 'react'
 import axios from 'axios'
 import BookByIddetails from '../Components/BookById_details'
 
 
 
 export default function BookById() {
+
+    const inputRef = useRef(null)
+
     const [searchbook , setsearch] = useState()
     const [result , setresult] = useState([])
 
@@ -12,10 +15,9 @@ export default function BookById() {
 
     const btnClick = async() =>{
         try {
+            inputRef.current.style.visibility="visible";
             const res = await axios.get(`https://api.itbook.store/1.0/books/${searchbook}`)
             setresult(res.data);
-            
-          
         } 
         catch (error) {
             console.log(error);
@@ -54,7 +56,9 @@ export default function BookById() {
 
             </div>
 
-            <BookByIddetails result={result} />
+            <div ref={inputRef} style={{visibility:'hidden'}}>
+            <BookByIddetails result={result}  />
+            </div>
         </>
     )
 }

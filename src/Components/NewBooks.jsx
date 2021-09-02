@@ -1,7 +1,21 @@
 import React , {useState , useEffect} from 'react'
 import axios from 'axios'
+import { BackTop } from 'antd';
+
 
 export default function NewBooks() {
+
+    const style = {
+        height: 40,
+        width: 40,
+        lineHeight: '40px',
+        borderRadius: 50,
+        backgroundColor: '#6c3483',
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 14,
+      };
+    
 
     const [Nbook , setBooks] = useState([])
 
@@ -48,6 +62,10 @@ export default function NewBooks() {
                     }
                 </div>
             </div></div>
+
+            <BackTop>
+      <div style={style}><i class="fas fa-angle-up"></i></div>
+    </BackTop>
         </div>
     )
 }
